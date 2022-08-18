@@ -32,7 +32,7 @@ var search = function(nums, target) {
             return mid;
         } else if (nums[mid] < target){
             first = mid + 1;
-        } else if (nums[mid] > target){
+        } else{
             last = mid - 1;
         }
     }
