@@ -19,11 +19,11 @@ var solution = function(isBadVersion) {
      */
     return function(n) { //[1,02,03]
         let first = 1;
-        let last = n;
-        while (first <= last) {
-            let mid = Math.floor((first + last) / 2)
+        // let last = n;
+        while (first <= n) {
+            let mid = Math.floor((first + n) / 2)
             if(isBadVersion(mid)) {
-                last = mid - 1; //2
+                n = mid - 1; //2
             } else {
                 first = mid + 1; //2
             }
