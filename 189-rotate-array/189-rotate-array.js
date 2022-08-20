@@ -19,7 +19,7 @@ var rotate = function(nums, k) {
 };
 
 const reversed = (nums, start, end) => {
-    while (start <= end) {
+    while (start < end) {
         [nums[start], nums[end]] = [nums[end], nums[start]];
         start++;
         end--;
