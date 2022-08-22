@@ -15,15 +15,25 @@
 //     }
 // };
 
+// var moveZeroes = function(nums) {
+//     let first = 0;
+//     while (first <= nums.length) {
+//         for(let i = first + 1; i < nums.length; i++) {
+//             if (nums[i] !== 0 && nums[first] === 0) {
+//                 [nums[first], nums[i]] = [nums[i], nums[first]]
+//                 first++;
+//             }
+//         }
+//         first++;
+//     }
+// };
+
 var moveZeroes = function(nums) {
-    let first = 0;
-    while (first <= nums.length) {
-        for(let i = first + 1; i < nums.length; i++) {
-            if (nums[i] !== 0 && nums[first] === 0) {
-                [nums[first], nums[i]] = [nums[i], nums[first]]
-                first++;
-            }
+    let index = 0;
+    for (let i = 0; i < nums.length; i++) {
+        if (nums[i] !== 0) {
+            [nums[index], nums[i]] = [nums[i], nums[index]];
+            index++;
         }
-        first++;
     }
 };
