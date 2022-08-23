@@ -24,10 +24,28 @@
 // }
 
 
+// var reverseWords = function(s) {
+//     let word = "";
+//     let res = "";
+//     for (let i = 0; i < s.length; i++) {
+//         let char = s[i];
+        
+//         if (char !== " ") {
+//             word = char + word
+//         }else{
+//             res += word + " "
+//             word = ""
+//         }
+//     }
+//     return res + word
+// };
+
+
 var reverseWords = function(s) {
     let word = "";
     let res = "";
-    for (let i = 0; i < s.length; i++) {
+    let i = 0;
+    while (i < s.length) {
         let char = s[i];
         
         if (char !== " ") {
@@ -36,6 +54,7 @@ var reverseWords = function(s) {
             res += word + " "
             word = ""
         }
+        i++
     }
     return res + word
 };
