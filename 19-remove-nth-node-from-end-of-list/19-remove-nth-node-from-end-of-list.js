@@ -11,7 +11,7 @@
  * @return {ListNode}
  */
 var removeNthFromEnd = function(head, n) {
-    const dummyHead = new ListNode(null)
+    const dummyHead = new ListNode()
     dummyHead.next = head;
     
     let fast = dummyHead;
