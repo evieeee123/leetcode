@@ -28,18 +28,29 @@
 
 
 
+// var middleNode = function(head) {
+//     let fast = head;
+//     let slow = head;
+    
+//     while (fast && fast.next) {
+//         fast = fast.next.next;
+//         slow = slow.next;
+//     }
+//     return slow;
+// };
+
+
 var middleNode = function(head) {
     let fast = head;
     let slow = head;
     
-    while (fast && fast.next) {
-        fast = fast.next.next;
-        slow = slow.next;
+    let toggle = false;
+    while (fast) {
+        if(toggle){
+            slow = slow.next
+        }
+        fast = fast.next;
+        toggle = !toggle;
     }
-    return slow;
+    return slow
 };
-
-
-// var middleNode = function(head) {
-    
-// };
