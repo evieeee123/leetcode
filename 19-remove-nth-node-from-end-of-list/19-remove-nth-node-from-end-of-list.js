@@ -21,7 +21,7 @@ var removeNthFromEnd = function(head, n) {
         fast = fast.next
     }
     
-    while (fast.next !== null) {
+    while (fast.next) {
         fast = fast.next;
         slow = slow.next
     }
