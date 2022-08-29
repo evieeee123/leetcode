@@ -26,18 +26,37 @@
 //buyPrice = prices[0];
 
 
+// var maxProfit = function(prices) {
+//     let maxProfit = 0;
+//     let buyPrice = prices[0];
+    
+//     for(let i = 0; i < prices.length; i++) {
+//         let profit = prices[i] - buyPrice;
+//         maxProfit = Math.max(profit, maxProfit)
+        
+//         if (prices[i] < buyPrice) {
+//             buyPrice = prices[i]
+//         }
+//     }
+//     return maxProfit
+// };
+
+
 var maxProfit = function(prices) {
     let maxProfit = 0;
-    let buyPrice = prices[0];
-    
-    for(let i = 0; i < prices.length; i++) {
-        let profit = prices[i] - buyPrice;
-        maxProfit = Math.max(profit, maxProfit)
-        
-        if (prices[i] < buyPrice) {
-            buyPrice = prices[i]
+    let buy = 0;
+    let sell = 1;
+    while (sell < prices.length) {
+        if (prices[buy] > prices[sell]) {
+            buy = sell;
+
         }
+        
+        if (prices[sell] - prices[buy] > maxProfit) {
+            maxProfit = prices[sell] - prices[buy]
+        }
+        sell++;
     }
-    return maxProfit
+    return maxProfit;
 };
 
