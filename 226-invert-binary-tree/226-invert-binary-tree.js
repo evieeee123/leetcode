@@ -26,15 +26,24 @@
 // };
 
 
+// var invertTree = function(root) {
+//     if (root === null) return root;
+//     let stack = [root];
+//     while(stack.length > 0) {
+//         let current = stack.pop();
+//         [current.left, current.right] = [current.right, current.left]
+//         if(current.right !== null) stack.push(current.right);
+//         if(current.left !== null) stack.push(current.left);
+        
+//     }
+//     return root;
+// };
+
+
 var invertTree = function(root) {
     if (root === null) return root;
-    let stack = [root];
-    while(stack.length > 0) {
-        let current = stack.pop();
-        [current.left, current.right] = [current.right, current.left]
-        if(current.right !== null) stack.push(current.right);
-        if(current.left !== null) stack.push(current.left);
-        
-    }
-    return root;
+    let leftLeave = invertTree(root.left);
+    let rightLeave = invertTree(root.right);
+    [root.left, root.right] = [rightLeave, leftLeave];
+    return root
 };
