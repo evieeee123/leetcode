@@ -40,10 +40,23 @@
 // };
 
 
+// var invertTree = function(root) {
+//     if (root === null) return root;
+//     let leftLeave = invertTree(root.left);
+//     let rightLeave = invertTree(root.right);
+//     [root.left, root.right] = [rightLeave, leftLeave];
+//     return root
+// };
+
+
 var invertTree = function(root) {
     if (root === null) return root;
-    let leftLeave = invertTree(root.left);
-    let rightLeave = invertTree(root.right);
-    [root.left, root.right] = [rightLeave, leftLeave];
-    return root
+    let temp = root.left;
+    root.left = root.right;
+    root.right = temp;
+    
+    invertTree(root.left);
+    invertTree(root.right);
+    
+    return root;
 };
