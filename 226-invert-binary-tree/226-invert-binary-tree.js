@@ -10,20 +10,20 @@
  * @param {TreeNode} root
  * @return {TreeNode}
  */
-var invertTree = function(root) {
-    if (root === null) return root;
-    let queue = [root];
-    // let res = [];
-    while(queue.length > 0) {
-        let current = queue.shift();
-        // res.push(current);
-        [current.left, current.right] = [current.right, current.left]
-        if(current.right !== null) queue.push(current.right);
-        if(current.left !== null) queue.push(current.left);
+// var invertTree = function(root) {
+//     if (root === null) return root;
+//     let queue = [root];
+//     // let res = [];
+//     while(queue.length > 0) {
+//         let current = queue.shift();
+//         // res.push(current);
+//         [current.left, current.right] = [current.right, current.left]
+//         if(current.right !== null) queue.push(current.right);
+//         if(current.left !== null) queue.push(current.left);
         
-    }
-    return root;
-};
+//     }
+//     return root;
+// };
 
 
 var invertTree = function(root) {
