@@ -14,10 +14,11 @@ var groupAnagrams = function(strs) {
     let arr = [];
     let hash = {};
     for(let i = 0; i < strs.length; i++){
-        if(hash[strs[i].split("").sort().join("")] ){
-            hash[strs[i].split("").sort().join("")].push(strs[i]); //aet: 
+        let sorted = strs[i].split("").sort().join("")
+        if(hash[sorted] ){
+            hash[sorted].push(strs[i]); //aet: 
         }else {
-            hash[strs[i].split("").sort().join("")] = [strs[i]];
+            hash[sorted] = [strs[i]];
         }
     }
     
