@@ -12,7 +12,6 @@
  */
 var goodNodes = function(root) {
     let goodnode = 0;
-    let max = -Infinity;
     
     function dfs(root, max){
         if (root === null) return;
