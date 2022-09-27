@@ -8,7 +8,7 @@ var maxArea = function(height) {
     let len = height.length - 1;
     let max = -Infinity;
     
-    while (len >= 1){
+    while (left < right){
         let area = Math.min(height[left], height[right]) * len;
         max = Math.max(max, area);
         if (height[left] <= height[right]) {
